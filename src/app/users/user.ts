@@ -1,4 +1,4 @@
-export class Info{
+export class User{
     placa: string;
     modelo: string;
     color_vehiculo: string;
