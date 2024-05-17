@@ -1,1 +1,30 @@
-<p>read-production works!</p>
+<div class="container-fluid">
+  <h3>Lista de Vehiculos</h3>
+<div class="col-12">
+  <table class = "table table-stripped">
+      <thead>
+          <tr>
+              <th>Title</th>
+              <th>Poster</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let v of productions">
+              <td>{{v.title}}</td>
+              <td>{{v.poster}}</td>
+
+              <td><button>type="button" class="btn btn-primary"
+                  (click)="onEditarProductions(v.id)" title="Editar">Editar</button>&nbsp;</td>
+          </tr>
+          <tr>
+              <td></td>
+              <td>Glass</td>
+              <td>...</td>
+              <td> <button type="button" class="btn btn-primary" title="Editar">Editar</button>&nbsp;
+          </tr>
+      </tbody>
+  </table>
+</div>
+
+
+</div>

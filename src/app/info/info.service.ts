@@ -11,8 +11,8 @@ export class InfoService {
   constructor(private http:HttpClient) {}
 
   obtenerInfo():Observable<Info[]>{
-    return this.http.get<Info[]>('http://127.0.0.1:8000/myApp/listar_vehiculos'); //CAMBIAR ENLACE
+    return this.http.get<Info[]>('http://127.0.0.1:8000/myApp/readInfo'); //CAMBIAR ENLACE
   }
 
-  
+
 }
