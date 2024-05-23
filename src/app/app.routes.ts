@@ -10,10 +10,11 @@ import { AddUserComponent } from './users/add-user/add-user.component';
 export const routes: Routes = [
     { path: 'create-info', component: CreateInfoComponent },
     { path: 'read-info', component: ReadInfoComponent },
-    { path: 'update-info', component: UpdateInfoComponent },
+    { path: 'update-info:id', component: UpdateInfoComponent },
     { path: 'create-production', component: CreateProductionComponent },
     { path: 'read-production', component: ReadProductionComponent },
     { path: 'delete-production', component: DeleteProductionComponent },
-    { path: 'add-user', component: AddUserComponent }
-    
+    { path: 'add-user', component: AddUserComponent },
+    { path: '', component: CreateProductionComponent },
+
 ];

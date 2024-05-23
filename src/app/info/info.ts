@@ -1,18 +1,26 @@
-export class Info{
-    placa: string;
-    modelo: string;
-    color_vehiculo: string;
-    marca: string;
-    id: number;
-    color_vehiculo_nombre: string;
-
-    public constructor(id:number, placa:string, modelo:string, color_vehiculo:string, marca:string, color_vehiculo_nombre:string){
-        this.id = id;
-        this.placa = placa;
-        this.modelo = modelo;
-        this.color_vehiculo = color_vehiculo;
-        this.marca = marca;
-        this.color_vehiculo_nombre = color_vehiculo_nombre;
+export class Info {
+    title:string;
+    description: string;
+    poster: string;
+    duration: string;
+    director: string;
+    country: string;
+    cast: string;
+    release: string;
+    trailer: string;
+    platform: string;
+  
+    public constructor(title:string,description: string,poster: string,duration: string,director: string,country: string,cast: string,release: string,trailer: string, platform: string
+    ) {
+        this.title = title;
+        this.description = description;
+        this.poster = poster;
+        this.duration = duration;
+        this.director = director;
+        this.country = country;
+        this.cast = cast;
+        this.release = release;
+        this.trailer = trailer;
+        this.platform = platform;
     }
-}
-//CAMBIAR ATRIBUTOS
+  }

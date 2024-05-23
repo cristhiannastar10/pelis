@@ -1,15 +1,18 @@
 import { TestBed } from '@angular/core/testing';
-import { ProductionService } from './productions.service';
+import { ProductionService } from './productions.service'; 
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { inject } from '@angular/core/testing';
 
 describe('ProductionService', () => {
-  let service: ProductionService;
-
   beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(ProductionService);
+    TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule],
+      providers: [ProductionService]
+    });
   });
 
-  it('should be created', () => {
+  it('should be created', inject([ProductionService], (service: ProductionService) => {
     expect(service).toBeTruthy();
-  });
+  }));
 });
+
