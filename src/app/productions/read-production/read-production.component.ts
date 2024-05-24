@@ -28,7 +28,7 @@ export class ReadProductionComponent implements OnInit {
     });
   }
 
-  onEditarNavigate(title: string) {
-    this.routerPath.navigate([`update-info/${title}`]);
+  onEditarNavigate(id: number) {
+    this.routerPath.navigate([`update-info/${id}`]);
   }
 }

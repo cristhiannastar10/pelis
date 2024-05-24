@@ -36,8 +36,8 @@ describe('ReadProductionComponent', () => {
     routerSpy = TestBed.inject(Router) as jasmine.SpyObj<Router>;
 
     productionServiceSpy.obtenerProductions.and.returnValue(of([
-      new Production('Production 1', null ),
-      new Production('Production 2', undefined ),
+      new Production(1, 'Production 1', null ),
+      new Production(2, 'Production 2', undefined ),
     ]));
     fixture.detectChanges();
   });
@@ -57,8 +57,8 @@ describe('ReadProductionComponent', () => {
   });
 
   it('should navigate to edit route on onEditarNavigate', () => {
-    const title = "titulo";
-    component.onEditarNavigate(title);
-    expect(routerSpy.navigate).toHaveBeenCalledWith([`update-info/${title}`]);
+    const id = 1;
+    component.onEditarNavigate(id);
+    expect(routerSpy.navigate).toHaveBeenCalledWith([`update-info/${id}`]);
   });
 });
