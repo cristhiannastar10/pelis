@@ -57,8 +57,8 @@ describe('ReadProductionComponent', () => {
   });
 
   it('should navigate to edit route on onEditarNavigate', () => {
-    const id = 1;
-    component.onEditarNavigate(id);
-    expect(routerSpy.navigate).toHaveBeenCalledWith([`update-info/${id}`]);
+    const title = "titulo";
+    component.onEditarNavigate(title);
+    expect(routerSpy.navigate).toHaveBeenCalledWith([`update-info/${title}`]);
   });
 });

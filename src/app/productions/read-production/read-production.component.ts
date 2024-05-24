@@ -1,36 +1,34 @@
 import { Component, OnInit } from '@angular/core';
-import {Router, RouterModule} from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { NgFor } from '@angular/common';
 import { Production } from '../productions';
 import { ProductionService } from '../productions.service';
 
-
 @Component({
   selector: 'app-read-production',
   standalone: true,
-  imports: [NgFor,RouterModule],
+  imports: [NgFor, RouterModule],
   templateUrl: './read-production.component.html',
-  styleUrl: './read-production.component.css'
+  styleUrls: ['./read-production.component.css']
 })
-export class ReadProductionComponent implements OnInit{
-  productions: Array<Production>=[];
+export class ReadProductionComponent implements OnInit {
+  productions: Array<Production> = [];
 
-  constructor(private routerPath: Router, private productionService: ProductionService){
+  constructor(private routerPath: Router, private productionService: ProductionService) { }
 
-  }
   ngOnInit() {
-      this.obtenerProductions();
+    this.obtenerProductions();
   }
-  obtenerProductions(){
 
-    this.productionService.obtenerProductions().subscribe(vs=>{
-      this.productions=vs;
-      console.log(this.productions)
+  obtenerProductions() {
+    this.productionService.obtenerProductions().subscribe(productions => {
+      this.productions = productions;
+      console.log(this.productions);
     });
   }
-  onEditarNavigate(id:number){
-    this.routerPath.navigate(['update-info/$(id)']);
+
+  onEditarNavigate(title: string) {
+    this.routerPath.navigate([`update-info/${title}`]);
   }
 }
-
