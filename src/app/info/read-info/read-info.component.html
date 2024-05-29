@@ -1,1 +1,38 @@
-<p>read-info works!</p>
+<div class="container-fluid">
+  <h3>Lista De Peliculas</h3>
+</div>
+
+<div class="col-12">
+  <table class="table table-striped">
+      <thead>
+          <tr>
+              <th>title</th>
+              <th>description</th>
+              <th>poster</th>
+              <th>duration</th>
+              <th>director</th>
+              <th>country</th>
+              <th>cast</th>
+              <th>release</th>
+              <th>trailer</th>
+              <th>platform</th>
+              <th>Editar</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let v of info">
+              <td>{{ v.title }}</td>
+              <td>{{ v.description }}</td>
+              <td><img [src]="v.poster" alt="{{ v.title }}" width="50"></td>
+              <td>{{ v.duration }}</td>
+              <td>{{ v.director }}</td>
+              <td>{{ v.country }}</td>
+              <td>{{ v.cast }}</td>
+              <td>{{ v.release }}</td>
+              <td><a [href]="v.trailer" target="_blank">Ver Trailer</a></td>
+              <td>{{ v.platform }}</td>
+              <td><button type="button" class="btn btn-primary" (click)="onEditarNavigate(v.id)" title="Editar">Editar</button></td>
+          </tr>
+      </tbody>
+  </table>
+</div>

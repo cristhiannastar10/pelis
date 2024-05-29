@@ -1,4 +1,5 @@
 export class Info {
+    id:number;
     title:string;
     description: string;
     poster: string;
@@ -9,9 +10,10 @@ export class Info {
     release: string;
     trailer: string;
     platform: string;
-  
-    public constructor(title:string,description: string,poster: string,duration: string,director: string,country: string,cast: string,release: string,trailer: string, platform: string
+
+    public constructor(id: number, title:string,description: string,poster: string,duration: string,director: string,country: string,cast: string,release: string,trailer: string, platform: string
     ) {
+        this.id=id;
         this.title = title;
         this.description = description;
         this.poster = poster;
