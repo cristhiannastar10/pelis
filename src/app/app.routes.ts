@@ -9,14 +9,32 @@ import { AddUserComponent } from './users/add-user/add-user.component';
 
 export const routes: Routes = [
   {
-  path:'',
-  component:ReadInfoComponent,
+    path: '',
+    component: ReadInfoComponent,
   },
   {
-    path:'crear-info',
-    component:CreateInfoComponent,
-  }
-
-
-
+    path: 'crear-info',
+    component: CreateInfoComponent,
+  },
+  {
+    path: 'actualizar-info',
+    component: UpdateInfoComponent,
+  },
+  {
+    path: 'crear-produccion',
+    component: CreateProductionComponent,
+  },
+  {
+    path: 'leer-produccion',
+    component: ReadProductionComponent,
+  },
+  {
+    path: 'borrar-produccion',
+    component: DeleteProductionComponent,
+  },
+  {
+    path: 'agregar-usuario',
+    component: AddUserComponent,
+  },
 ];
+

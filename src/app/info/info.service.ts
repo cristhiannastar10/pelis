@@ -7,15 +7,17 @@ import { Info } from './info';
   providedIn: 'root'
 })
 export class InfoService {
+  private apiUrl = 'http://127.0.0.1:8000/myApp';
 
-  constructor(private http:HttpClient) {}
+  constructor(private http: HttpClient) {}
 
-  obtenerInfo():Observable<Info[]>{
-    return this.http.get<Info[]>('http://127.0.0.1:8000/myApp/readInfo'); 
-  }
-  
-  createInfo(info: Info): Observable<Info>{
-    return this.http.post<Info>('http://127.0.0.1:8000/myApp/createInfo', Info); 
+  obtenerInfo(): Observable<Info[]> {
+    return this.http.get<Info[]>(`${this.apiUrl}/readInfo`);
   }
 
+  createInfo(infoData: FormData): Observable<Info> {
+    return this.http.post<Info>(`${this.apiUrl}/createInfo`, infoData);
+  }
+
+  // Add paths for update as needed
 }
