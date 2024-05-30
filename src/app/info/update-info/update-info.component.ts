@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { InfoService } from '../info.service';
 import { Info } from '../info';
 
 @Component({
   selector: 'app-update-info',
-  templateUrl: './update-info.component.html',
+  templateUrl: './update-info.component.html',  // Ensure this path is correct
   styleUrls: ['./update-info.component.css']
 })
 export class UpdateInfoComponent implements OnInit {
@@ -25,7 +25,7 @@ export class UpdateInfoComponent implements OnInit {
     this.infoForm = this.formBuilder.group({
       title: ['', [Validators.required, Validators.minLength(3)]],
       description: ['', [Validators.required, Validators.minLength(3)]],
-      poster: ['', Validators.required],
+      poster: [null, Validators.required],
       genre: ['', [Validators.required, Validators.minLength(3)]],
       duration: ['', Validators.required],
       director: ['', [Validators.required, Validators.minLength(3)]],

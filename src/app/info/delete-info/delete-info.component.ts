@@ -4,8 +4,8 @@ import { Component } from '@angular/core';
   selector: 'app-delete-production',
   standalone: true,
   imports: [],
-  templateUrl: './delete-production.component.html',
-  styleUrl: './delete-production.component.css'
+  templateUrl: './delete-info.component.html',
+  styleUrl: './delete-info.component.css'
 })
 export class DeleteProductionComponent {
 
