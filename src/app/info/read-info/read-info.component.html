@@ -1,38 +1,38 @@
-<div class="container-fluid">
-  <h3>Lista De Peliculas</h3>
-</div>
-
-<div class="col-12">
-  <table class="table table-striped">
-      <thead>
-          <tr>
-              <th>title</th>
-              <th>description</th>
-              <th>poster</th>
-              <th>duration</th>
-              <th>director</th>
-              <th>country</th>
-              <th>cast</th>
-              <th>release</th>
-              <th>trailer</th>
-              <th>platform</th>
-              <th>Editar</th>
-          </tr>
-      </thead>
-      <tbody>
-          <tr *ngFor="let v of info">
-              <td>{{ v.title }}</td>
-              <td>{{ v.description }}</td>
-              <td><img [src]="v.poster" alt="{{ v.title }}" width="50"></td>
-              <td>{{ v.duration }}</td>
-              <td>{{ v.director }}</td>
-              <td>{{ v.country }}</td>
-              <td>{{ v.cast }}</td>
-              <td>{{ v.release }}</td>
-              <td><a [href]="v.trailer" target="_blank">Ver Trailer</a></td>
-              <td>{{ v.platform }}</td>
-              <td><button type="button" class="btn btn-primary" (click)="onEditarNavigate(v.id)" title="Editar">Editar</button></td>
-          </tr>
-      </tbody>
+<div class="container mt-4">
+  <h2>Lista de Producciones</h2>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Título</th>
+        <th>Descripción</th>
+        <th>Género</th>
+        <th>Duración</th>
+        <th>Director</th>
+        <th>País</th>
+        <th>Elenco</th>
+        <th>Fecha de Estreno</th>
+        <th>Tráiler</th>
+        <th>Plataforma</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of info">
+        <td>{{ item.title }}</td>
+        <td>{{ item.description }}</td>
+        <td>{{ item.genre }}</td>
+        <td>{{ item.duration }}</td>
+        <td>{{ item.director }}</td>
+        <td>{{ item.country }}</td>
+        <td>{{ item.cast }}</td>
+        <td>{{ item.release | date }}</td>
+        <td><a [href]="item.trailer" target="_blank">Ver Tráiler</a></td>
+        <td>{{ item.platform }}</td>
+        <td>
+          <button class="btn btn-primary btn-sm" (click)="onEditarNavigate(item.id)">Editar</button>
+          <button class="btn btn-danger btn-sm" (click)="onEliminarNavigate(item.id)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
   </table>
 </div>
