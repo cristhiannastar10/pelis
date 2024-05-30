@@ -6,11 +6,13 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { of } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { Info } from '../info';
+import { Router } from '@angular/router';
 
 describe('ReadInfoComponent', () => {
   let component: ReadInfoComponent;
   let fixture: ComponentFixture<ReadInfoComponent>;
   let infoService: InfoService;
+  let router: Router;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -24,11 +26,12 @@ describe('ReadInfoComponent', () => {
     fixture = TestBed.createComponent(ReadInfoComponent);
     component = fixture.componentInstance;
     infoService = TestBed.inject(InfoService);
+    router = TestBed.inject(Router);
 
     // Mock the obtenerInfo method to avoid actual HTTP requests
     spyOn(infoService, 'obtenerInfo').and.returnValue(of([
-      { id: 1, title: 'Movie 1', description: 'Description 1', poster: null, genre: 'Genre 1', duration: '2h', director: 'Director 1', country: 'Country 1', cast: 'Cast 1', release: '20/02/2001', trailer: 'http://trailer1.com', platform: 'Platform 1' },
-      { id: 2, title: 'Movie 2', description: 'Description 2', poster: null, genre: 'Genre 2', duration: '2h', director: 'Director 2', country: 'Country 2', cast: 'Cast 2', release: '20/02/2001', trailer: 'http://trailer2.com', platform: 'Platform 2' }
+      { id: 1, title: 'Movie 1', description: 'Description 1', poster: null, genre: 'Genre 1', duration: '2h', director: 'Director 1', country: 'Country 1', cast: 'Cast 1', release: '2001-02-20', trailer: 'http://trailer1.com', platform: 'Platform 1' },
+      { id: 2, title: 'Movie 2', description: 'Description 2', poster: null, genre: 'Genre 2', duration: '2h', director: 'Director 2', country: 'Country 2', cast: 'Cast 2', release: '2001-02-20', trailer: 'http://trailer2.com', platform: 'Platform 2' }
     ] as Info[]));
 
     fixture.detectChanges();
@@ -47,7 +50,10 @@ describe('ReadInfoComponent', () => {
     spyOn(component, 'onEditarNavigate');
     const button = fixture.nativeElement.querySelector('.btn-primary');
     button.click();
-    expect(component.onEditarNavigate).toHaveBeenCalledWith(1);
+    expect(component.onEditarNavigate).toHaveBeenCalledWith(jasmine.objectContaining({
+      id: 1,
+      title: 'Movie 1'
+    }));
   });
 
   it('should call onEliminarNavigate when Eliminar button is clicked', () => {
@@ -55,5 +61,12 @@ describe('ReadInfoComponent', () => {
     const button = fixture.nativeElement.querySelector('.btn-danger');
     button.click();
     expect(component.onEliminarNavigate).toHaveBeenCalledWith(1);
+  });
+
+  it('should navigate to updateInfo with state', () => {
+    const navigateSpy = spyOn(router, 'navigate');
+    const item = { id: 1, title: 'Movie 1', description: 'Description 1', poster: null, genre: 'Genre 1', duration: '2h', director: 'Director 1', country: 'Country 1', cast: 'Cast 1', release: '2001-02-20', trailer: 'http://trailer1.com', platform: 'Platform 1' };
+    component.onEditarNavigate(item);
+    expect(navigateSpy).toHaveBeenCalledWith(['/updateInfo'], { state: { info: item } });
   });
 });
