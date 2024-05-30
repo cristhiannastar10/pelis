@@ -27,4 +27,8 @@ export class InfoService {
     return this.http.put<Info>(`${this.apiUrl}/updateInfo/${id}`, infoData);
   }
 
+  deleteInfo(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/deleteInfo/${id}`);
+  }
+
 }

@@ -33,6 +33,14 @@ export class ReadInfoComponent implements OnInit {
   }
 
   onEliminarNavigate(id: number) {
-    this.router.navigate([`/borrar-produccion/${id}`]);
+    if (confirm('Are you sure you want to delete this production?')) {
+      this.infoService.deleteInfo(id).subscribe(() => {
+        alert('Production deleted successfully');
+        this.obtenerInfo(); // Refresh the list
+      }, error => {
+        console.error('Error deleting production:', error);
+        alert('Error deleting production');
+      });
+    }
   }
 }
