@@ -1,5 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from './user';
 
@@ -7,12 +7,12 @@ import { User } from './user';
   providedIn: 'root'
 })
 export class UserService {
+  private apiUrl = 'http://api.tuapi.com/users';  // Asegúrate de cambiar la URL a la correcta
 
-  constructor(private http:HttpClient) {}
+  constructor(private http: HttpClient) {}
 
-  obtenerInfo():Observable<User[]>{
-    return this.http.get<User[]>('http://127.0.0.1:8000/myApp/listar_vehiculos'); //CAMBIAR ENLACE
+  crearUsuario(user: User): Observable<User> {
+    return this.http.post<User>(this.apiUrl, user);
   }
-
-  
 }
+
