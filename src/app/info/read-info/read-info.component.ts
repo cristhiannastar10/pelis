@@ -10,7 +10,7 @@ import { InfoService } from '../info.service';
   standalone: true,
   imports: [NgFor, RouterModule, CommonModule, HttpClientModule],
   templateUrl: './read-info.component.html',
-  styleUrls: ['./read-info.component.css']  // Corrected property name
+  styleUrls: ['./read-info.component.css']
 })
 export class ReadInfoComponent implements OnInit {
   info: Array<Info> = [];
@@ -24,15 +24,15 @@ export class ReadInfoComponent implements OnInit {
   obtenerInfo() {
     this.infoService.obtenerInfo().subscribe(vs => {
       this.info = vs;
-      console.log(this.info);  // Ensure data is being logged correctly
+      console.log(this.info);
     });
   }
 
   onEditarNavigate(id: number) {
-    this.router.navigate([`/updateInfo/${id}`]);
+    this.router.navigate(['/actualizar-info', id]);
   }
 
   onEliminarNavigate(id: number) {
-    this.router.navigate([`/deleteInfo/${id}`]);
+    this.router.navigate([`/borrar-produccion/${id}`]);
   }
 }

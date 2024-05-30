@@ -17,7 +17,7 @@ export const routes: Routes = [
     component: CreateInfoComponent,
   },
   {
-    path: 'actualizar-info',
+    path: 'actualizar-info/:id',
     component: UpdateInfoComponent,
   },
   {
@@ -37,4 +37,3 @@ export const routes: Routes = [
     component: AddUserComponent,
   },
 ];
-
