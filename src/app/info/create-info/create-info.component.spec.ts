@@ -27,7 +27,6 @@ describe('CreateInfoComponent', () => {
     component = fixture.componentInstance;
     infoService = TestBed.inject(InfoService);
 
-    // Mock the createInfo method to avoid actual HTTP requests
     spyOn(infoService, 'createInfo').and.returnValue(of({} as any));
 
     fixture.detectChanges();
@@ -41,7 +40,7 @@ describe('CreateInfoComponent', () => {
     expect(component.infoForm).toBeDefined();
     expect(component.infoForm.controls['title']).toBeDefined();
     expect(component.infoForm.controls['description']).toBeDefined();
-    // Add more form controls checks as needed
+    //Only those forms of control (Don´t know how to do it with image)
   });
 
   it('should display required validation errors', () => {

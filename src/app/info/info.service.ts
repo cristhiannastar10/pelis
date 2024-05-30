@@ -19,5 +19,11 @@ export class InfoService {
     return this.http.post<Info>(`${this.apiUrl}/createInfo`, infoData);
   }
 
-  // Add paths for update as needed
+  updateInfo(id: number, infoData: FormData): Observable<Info> {
+    return this.http.put<Info>(`${this.apiUrl}/updateInfo/${id}`, infoData);
+  }
+
+  deleteInfo(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/deleteInfo/${id}`);
+  }
 }

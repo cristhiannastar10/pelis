@@ -1,8 +1,9 @@
 export class Info {
     id: number;
     title: string;
+    genre: String;
     description: string;
-    poster: File;
+    poster?: File | null;  // Make poster optional or allow null
     duration: string;
     director: string;
     country: string;
@@ -14,6 +15,7 @@ export class Info {
     public constructor(
       id: number,
       title: string,
+      genre: String,
       description: string,
       poster: File,
       duration: string,
@@ -26,6 +28,7 @@ export class Info {
     ) {
       this.id = id;
       this.title = title;
+      this.genre = genre;
       this.description = description;
       this.poster = poster;
       this.duration = duration;
