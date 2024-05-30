@@ -3,7 +3,7 @@ export class Info {
     title: string;
     genre: String;
     description: string;
-    poster?: File | null;  // Make poster optional or allow null
+    poster?: File | null | undefined;  
     duration: string;
     director: string;
     country: string;
