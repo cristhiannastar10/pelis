@@ -1,15 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ActivatedRoute, Router, RouterModule } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { InfoService } from '../info.service';
 import { Info } from '../info';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-update-info',
-  standalone: true,
-  imports: [ReactiveFormsModule, RouterModule, HttpClientModule, CommonModule],
   templateUrl: './update-info.component.html',
   styleUrls: ['./update-info.component.css']
 })

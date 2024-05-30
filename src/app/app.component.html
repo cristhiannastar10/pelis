@@ -7,26 +7,30 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-              <a class="nav-link" href="#">Home</a>
+              <a class="nav-link" routerLink="/">Home</a>
           </li>
 
           <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Peliculas
+                  Información
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" routerLink="/peliculas">Lista De Peliculas</a>
-                  <a class="dropdown-item" routerLink="/crear-pelicula">Crear Nueva Pelicula</a>
+                  <a class="dropdown-item" routerLink="/crear-info">Crear Información</a>
+                  <a class="dropdown-item" routerLink="/actualizar-info">Actualizar Información</a>
               </div>
           </li>
           <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownSeries" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Series
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownProducciones" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Producciones
               </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdownSeries">
-                  <a class="dropdown-item" routerLink="/series">Lista De Series</a>
-                  <a class="dropdown-item" routerLink="/crear-serie">Crear Nueva Serie</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownProducciones">
+                  <a class="dropdown-item" routerLink="/crear-produccion">Crear Producción</a>
+                  <a class="dropdown-item" routerLink="/leer-produccion">Leer Producción</a>
+                  <a class="dropdown-item" routerLink="/borrar-produccion">Borrar Producción</a>
               </div>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" routerLink="/agregar-usuario">Agregar Usuario</a>
           </li>
       </ul>
   </div>
