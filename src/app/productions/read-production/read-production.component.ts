@@ -31,4 +31,8 @@ export class ReadProductionComponent implements OnInit {
   onMirarNavigate() {
     this.router.navigate(['/leer-info']);
   }
+
+  onCreateNavigate(){
+    this.router.navigate(['/crear-info'])
+  }
 }
