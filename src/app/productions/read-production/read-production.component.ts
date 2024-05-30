@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import {CommonModule, NgFor} from '@angular/common';
+import { CommonModule, NgFor } from '@angular/common';
 import { Production } from '../productions';
 import { ProductionsService } from '../productions.service';
 
@@ -15,7 +15,7 @@ import { ProductionsService } from '../productions.service';
 export class ReadProductionComponent implements OnInit {
   productions: Array<Production> = [];
 
-  constructor(private routerPath: Router, private productionService: ProductionsService) { }
+  constructor(private router: Router, private productionService: ProductionsService) { }
 
   ngOnInit() {
     this.obtenerProductions();
@@ -27,5 +27,8 @@ export class ReadProductionComponent implements OnInit {
       console.log(this.productions);
     });
   }
-}
 
+  onMirarNavigate() {
+    this.router.navigate(['/leer-info']);
+  }
+}
