@@ -30,7 +30,7 @@
       <h1 class="title-line" onclick="redirectToHome()">Streamify</h1>
     </div>
     <div class="col-md-2 text-right">
-      <button class="btn btn-primary" onclick="createUser()">Crear Usuario</button>
+      <a class="btn btn-primary" href="agregar-usuario">Crear Usuario</a>
     </div>
   </div>
   <div class="separator-line"></div>
@@ -52,11 +52,6 @@
   function redirectToHome() {
     // This function should handle the redirection to the initial state
     this.router.navigate(['']);
-  }
-
-  function createUser() {
-    // Function to handle creating a user
-    // Add your user creation logic here
   }
 </script>
 
