@@ -7,7 +7,7 @@ import { User } from './user';
   providedIn: 'root'
 })
 export class UserService {
-  private apiUrl = 'http://api.tuapi.com/users';  // Asegúrate de cambiar la URL a la correcta
+  private apiUrl = 'http://api.tuapi.com/users';  // Cambia esta URL a la correcta
 
   constructor(private http: HttpClient) {}
 
