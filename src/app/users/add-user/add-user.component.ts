@@ -1,12 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { User } from '../user'; // Ensure the path to the User model is correct
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { User } from '../user';
 import { UserService } from '../user.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-add-user',
   templateUrl: './add-user.component.html',
-  styleUrls: ['./add-user.component.css']
+  styleUrls: ['./add-user.component.css'],
+  standalone: true,
+  imports: [CommonModule, ReactiveFormsModule, HttpClientModule]
 })
 export class AddUserComponent implements OnInit {
   userForm!: FormGroup;

@@ -5,13 +5,13 @@ import { Router } from '@angular/router';
 import { of } from 'rxjs';
 
 import { ReadProductionComponent } from './read-production.component';
-import { ProductionService } from '../productions.service';
+import { ProductionsService } from '../productions.service';
 import { Production } from '../productions';
 
 describe('ReadProductionComponent', () => {
   let component: ReadProductionComponent;
   let fixture: ComponentFixture<ReadProductionComponent>;
-  let productionServiceSpy: jasmine.SpyObj<ProductionService>;
+  let productionServiceSpy: jasmine.SpyObj<ProductionsService>;
   let routerSpy: jasmine.SpyObj<Router>;
 
   beforeEach(async(() => {
@@ -22,7 +22,7 @@ describe('ReadProductionComponent', () => {
       imports: [HttpClientModule, HttpClientTestingModule],
       declarations: [ReadProductionComponent],
       providers: [
-        { provide: ProductionService, useValue: spyProductionService },
+        { provide: spyProductionService, useValue: spyProductionService },
         { provide: Router, useValue: spyRouter },
       ],
     })

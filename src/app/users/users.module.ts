@@ -2,13 +2,13 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AddUserComponent } from './add-user/add-user.component'; // Import the AddUserComponent
+import { AddUserComponent } from './add-user/add-user.component';
 import { HttpClientModule } from '@angular/common/http';
-import { UserService } from './user.service'; // Import the UserService
+import { UserService } from './user.service';
 
 @NgModule({
   declarations: [
-    AddUserComponent // Declare the AddUserComponent
+    AddUserComponent
   ],
   imports: [
     CommonModule,
@@ -18,10 +18,10 @@ import { UserService } from './user.service'; // Import the UserService
     HttpClientModule
   ],
   providers: [
-    UserService // Provide the UserService
+    UserService
   ],
   exports: [
-    AddUserComponent // Export the AddUserComponent
+    AddUserComponent
   ]
 })
 export class UsersModule { }

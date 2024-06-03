@@ -18,3 +18,4 @@ export class ProductionsService {
     return this.http.get<Production>(`${this.apiUrl}/getInfo/${id}`);
   } 
 }
+
