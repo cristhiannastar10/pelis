@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { ReadProductionComponent } from './read-production/read-production.component';
+import { RouterModule } from '@angular/router';  // Ensure RouterModule is imported if you are using router functionalities
 
 @NgModule({
   declarations: [
-    ReadProductionComponent
   ],
   imports: [
-    CommonModule  // Add CommonModule to imports
+    CommonModule,
+    RouterModule  // Import RouterModule if needed
   ]
 })
 export class ProductionsModule { }

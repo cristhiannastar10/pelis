@@ -1,16 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 import { Production } from '../productions';
 import { ProductionsService } from '../productions.service';
 
 @Component({
   selector: 'app-read-production',
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './read-production.component.html',
   styleUrls: ['./read-production.component.css']
 })
 export class ReadProductionComponent implements OnInit {
   productions: Production[] = [];
-  private mediaUrl = 'http://127.0.0.1:8000/media/';  // Base URL for media files
+  private mediaUrl = 'http://127.0.0.1:8000/myApp/media/';  // Base URL for media files
 
   constructor(private router: Router, private productionService: ProductionsService) {}
 
@@ -29,7 +32,10 @@ export class ReadProductionComponent implements OnInit {
   }
 
   constructImageUrl(poster: string): string {
-    // Ensure the poster path is correctly formed
+    // Remove leading slashes if they exist
+    if (poster.startsWith('/media/')) {
+      poster = poster.replace('/media/', '');
+    }
     return `${this.mediaUrl}${poster}`;
   }
 
