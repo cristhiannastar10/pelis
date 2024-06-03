@@ -8,7 +8,7 @@ import { UserService } from './user.service';
 
 @NgModule({
   declarations: [
-    AddUserComponent
+    
   ],
   imports: [
     CommonModule,
@@ -21,7 +21,7 @@ import { UserService } from './user.service';
     UserService
   ],
   exports: [
-    AddUserComponent
+    
   ]
 })
 export class UsersModule { }

@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-
+import { ReadProductionComponent } from './read-production/read-production.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    ReadProductionComponent
+  ],
   imports: [
-    CommonModule
+    CommonModule  // Add CommonModule to imports
   ]
 })
 export class ProductionsModule { }
