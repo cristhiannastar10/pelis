@@ -16,5 +16,5 @@ export class ProductionsService {
   }
   getInfo(id: number): Observable<Production> {
     return this.http.get<Production>(`${this.apiUrl}/getInfo/${id}`);
-  } //get new method to help update and delete
+  } 
 }

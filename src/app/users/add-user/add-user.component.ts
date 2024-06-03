@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { User } from '../user'; // Asegúrate de que la ruta y el nombre del modelo sean correctos
+import { User } from '../user'; // Ensure the path and name of the model are correct
 import { UserService } from '../user.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { UserService } from '../user.service';
   standalone: true,
   imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './add-user.component.html',
-  styleUrls: ['./add-user.component.css']  // Usa styleUrls en lugar de styleUrl
+  styleUrls: ['./add-user.component.css'] // Use styleUrls instead of styleUrl
 })
 export class AddUserComponent implements OnInit {
   userForm!: FormGroup;
@@ -18,20 +18,20 @@ export class AddUserComponent implements OnInit {
 
   ngOnInit(): void {
     this.userForm = this.formBuilder.group({
-      nombre: ['', [Validators.required]],
+      username: ['', [Validators.required]], // Changed 'nombre' to 'username'
       password: ['', [Validators.required]],  
     });
   }
 
   crearUsuario(): void {
-    const usuario: User = this.userForm.value;  // Obtiene el valor del formulario y asegura que el tipo es 'User'
+    const usuario: User = this.userForm.value; // Get form value and ensure the type is 'User'
 
     this.userService.crearUsuario(usuario).subscribe(
-      (usuarioCreado: User) => {  // Especifica el tipo de usuarioCreado
+      (usuarioCreado: User) => { // Specify the type of usuarioCreado
         alert('Usuario creado con éxito');
         this.userForm.reset();
       },
-      (error: any) => {  // Especifica el tipo de error
+      (error: any) => { // Specify the type of error
         console.error('Error al crear usuario', error);
       }
     );

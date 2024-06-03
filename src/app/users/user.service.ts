@@ -7,12 +7,11 @@ import { User } from './user';
   providedIn: 'root'
 })
 export class UserService {
-  private apiUrl = 'http://api.tuapi.com/users';  // Asegúrate de cambiar la URL a la correcta
+  private apiUrl = 'http://127.0.0.1:8000/myApp';  // Backend URL
 
   constructor(private http: HttpClient) {}
 
   crearUsuario(user: User): Observable<User> {
-    return this.http.post<User>(this.apiUrl, user);
+    return this.http.post<User>(`${this.apiUrl}/createAdminProfile/`, user);
   }
 }
-
