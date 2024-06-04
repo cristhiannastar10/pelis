@@ -10,7 +10,6 @@
     .title-line {
       border-bottom: 2px solid #000;
       padding-bottom: 10px;
-      cursor: pointer; /* Add pointer cursor to indicate it's clickable */
     }
     .separator-line {
       border-bottom: 1px solid #ccc;
@@ -27,10 +26,10 @@
 <div class="container-fluid">
   <div class="row navbar-custom">
     <div class="col-md-10">
-      <h1 class="title-line" onclick="redirectToHome()">Streamify</h1>
+      <h1 class="title-line"><a href="/ver-producciones">Streamify</a></h1>
     </div>
     <div class="col-md-2 text-right">
-      <a class="btn btn-primary" href="agregar-usuario">Crear Usuario</a>
+      <a class="btn btn-primary" href="/agregar-usuario">Crear Usuario</a>
     </div>
   </div>
   <div class="separator-line"></div>
@@ -47,13 +46,6 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-<script>
-  function redirectToHome() {
-    // This function should handle the redirection to the initial state
-    this.router.navigate(['']);
-  }
-</script>
 
 </body>
 </html>

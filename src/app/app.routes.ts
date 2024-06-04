@@ -8,7 +8,7 @@ import { AddUserComponent } from './users/add-user/add-user.component';
 
 export const routes: Routes = [
   {
-    path: '',
+    path: 'ver-producciones',
     component: ReadProductionComponent,
   },
   {
